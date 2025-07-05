@@ -8,3 +8,5 @@ venv/
 .DS_Store
 *.sqlite3
 key.json
+key.json
+key.json
