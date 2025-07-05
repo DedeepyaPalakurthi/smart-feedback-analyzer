@@ -2,3 +2,6 @@ fastapi
 uvicorn
 textblob
 pydantic
+
+requests
+pytest
