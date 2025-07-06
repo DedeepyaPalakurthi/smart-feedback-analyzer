@@ -1,52 +1,55 @@
 # 💬 Smart Feedback Analyzer
 
-An API-powered sentiment analysis engine built with **FastAPI**, designed to analyze user feedback in real-time. Ideal for customer support tools, review dashboards, or internal product monitoring systems.
+A production-ready, API-driven sentiment analysis engine built using **FastAPI** and deployed with **CI/CD pipelines** on **Google Cloud Run**. Designed for scalable real-time analysis of customer feedback, reviews, or internal product insights.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🔍 Predicts sentiment (Positive, Neutral, Negative) from raw text input
-- ⚡ Built using FastAPI for high performance and simplicity
-- 🧠 Includes a plug-and-play ML model (Scikit-learn or Transformers ready)
-- 🧪 Unit-tested with `pytest`
-- 📦 Containerized using Docker
-- 🔁 Ready for CI/CD pipeline integration
-
----
-
-## 🛠️ Tech Stack
-
-- **Language**: Python 3.12  
-- **API**: FastAPI  
-- **ML**: Scikit-learn (can swap with HuggingFace transformers)  
-- **Testing**: Pytest  
-- **Containerization**: Docker  
-- **Deployment-ready**: CI/CD setup support (GitHub Actions)
+- 🔍 **Real-Time Sentiment Analysis** — Predicts Positive, Neutral, or Negative sentiment
+- ⚡ **High-Performance API** — Built with FastAPI, optimized for async requests
+- 🐳 **Dockerized & Cloud Native** — Fully containerized with Docker, deployed via Cloud Run
+- 🔁 **CI/CD Ready** — GitHub Actions pipeline auto-builds, tests, and deploys
+- 🧪 **Robust Testing** — Unit-tested with Pytest for reliability and maintainability
 
 ---
 
-## 📂 Project Structure
+## 🛠 Tech Stack
+
+| Layer              | Tools & Frameworks                            |
+|-------------------|------------------------------------------------|
+| **Language**       | Python 3.10                                    |
+| **API Framework**  | FastAPI                                        |
+| **ML Model**       | Scikit-learn (Transformers-ready)              |
+| **Testing**        | Pytest                                         |
+| **Containerization**| Docker                                        |
+| **CI/CD**          | GitHub Actions + Google Cloud Build & Run     |
+| **Cloud Platform** | Google Cloud Platform (Artifact Registry, Cloud Run) |
+
+---
+
+## 📁 Project Structure
 
 ```
 smart-feedback-analyzer/
 ├── app/
-│   ├── main.py            # FastAPI routes
-│   ├── model.py           # Sentiment logic
-│   └── schemas.py         # Pydantic models
-├── tests/                 # Unit tests
-├── Dockerfile             # For containerized deployment
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
+│   ├── main.py # FastAPI entry point
+│   ├── model.py # Sentiment classification logic
+│   └── schemas.py # Pydantic request/response schemas
+├── tests/ # Pytest unit tests
+├── Dockerfile # Docker image definition
+├── .github/workflows/ # GitHub Actions CI/CD pipeline
+├── requirements.txt # Python dependencies
+└── README.md # You're here!
 ```
 
 ---
 
 ## 🧪 Run Locally
 
-### 1. Clone the Repo
+### 1. Clone & Set Up
 ```bash
-git clone git@github.com:DedeepyaPalakurthi/smart-feedback-analyzer.git
+git clone https://github.com/DedeepyaPalakurthi/smart-feedback-analyzer.git
 cd smart-feedback-analyzer
 ```
 
@@ -61,13 +64,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Start the API Server
+### 4. Run the API
 ```bash
 uvicorn app.main:app --reload
 ```
-
-Open your browser at:  
-👉 `http://127.0.0.1:8000/docs` to test the Swagger UI
+📍 Visit http://127.0.0.1:8000/docs to test in Swagger UI.
 
 ---
 
@@ -78,7 +79,7 @@ pytest
 
 ---
 
-## 🐳 Docker (Optional)
+## 🐳 Docker Usage
 ```bash
 docker build -t feedback-analyzer .
 docker run -p 8000:8000 feedback-analyzer
@@ -86,16 +87,32 @@ docker run -p 8000:8000 feedback-analyzer
 
 ---
 
-## ✍️ Example Request
+## ☁️ CI/CD & Deployment
 
-**POST** `/predict`
+This project is configured to auto-deploy on push to main using:
+
+- GitHub Actions
+- GCP Artifact Registry
+- Cloud Run
+
+To redeploy manually:
+
+```bash
+gcloud run deploy smart-feedback-api   --image us-central1-docker.pkg.dev/PROJECT_ID/REPO/feedback-analyzer   --platform managed   --region us-central1   --allow-unauthenticated
+```
+
+---
+
+## 📦 Example API Request
+
+### POST `/predict`
 ```json
 {
-  "text": "This product is amazing and easy to use!"
+  "text": "The customer service was excellent!"
 }
 ```
 
-**Response**
+### Response:
 ```json
 {
   "sentiment": "Positive"
@@ -104,22 +121,18 @@ docker run -p 8000:8000 feedback-analyzer
 
 ---
 
-## 📌 Future Enhancements
+## 📌 Future Improvements
 
-- Add support for multilingual sentiment analysis
-- Integrate MongoDB/PostgreSQL for feedback storage
-- Deploy to AWS/GCP with CI/CD
-- Add real-time dashboard using Streamlit
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
+- [ ] Streamlit dashboard for real-time feedback analysis
+- [ ] Multilingual sentiment classification
+- [ ] Integration with MongoDB/PostgreSQL
+- [ ] Logging & monitoring setup (Stackdriver or Prometheus)
 
 ---
 
-## 📄 License
+## 👩‍💻 Maintainer
 
-MIT License. Free to use and modify.
-# Trigger redeploy
+**Dedeepya Palakurthi**  
+Graduate, MS in Data Science – UMBC  
+Open to Data Engineer / ML Infra / AI Platform roles  
+📫 Connect: [LinkedIn](https://www.linkedin.com/in/dedeepya-palakurthi-366653204/)
