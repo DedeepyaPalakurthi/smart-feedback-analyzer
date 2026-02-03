@@ -18,7 +18,7 @@ A production-ready, API-driven sentiment analysis engine built using **FastAPI**
 
 | Layer               | Tools & Frameworks                                   |
 |---------------------|------------------------------------------------------|
-| **Language**        | Python 3.10 or above                                 |
+| **Language**        | Python 3.10 or any version above                     |
 | **API Framework**   | FastAPI                                              |
 | **ML Model**        | Scikit-learn (Transformers-ready)                    |
 | **Testing**         | Pytest                                               |
