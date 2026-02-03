@@ -134,5 +134,5 @@ gcloud run deploy smart-feedback-api   --image us-central1-docker.pkg.dev/PROJEC
 
 **Dedeepya Palakurthi**  
 Graduate, MS in Data Science – UMBC  
-Open to Data Engineer / ML Infra / AI Platform roles  
+Open to Software Engineer / Data Engineer / ML Infra / AI Platform roles  
 📫 Connect: [LinkedIn](https://www.linkedin.com/in/dedeepya-palakurthi-366653204/)
