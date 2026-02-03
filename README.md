@@ -16,15 +16,15 @@ A production-ready, API-driven sentiment analysis engine built using **FastAPI**
 
 ## 🛠 Tech Stack
 
-| Layer              | Tools & Frameworks                            |
-|-------------------|------------------------------------------------|
-| **Language**       | Python 3.10                                    |
-| **API Framework**  | FastAPI                                        |
-| **ML Model**       | Scikit-learn (Transformers-ready)              |
-| **Testing**        | Pytest                                         |
-| **Containerization**| Docker                                        |
-| **CI/CD**          | GitHub Actions + Google Cloud Build & Run     |
-| **Cloud Platform** | Google Cloud Platform (Artifact Registry, Cloud Run) |
+| Layer               | Tools & Frameworks                                   |
+|---------------------|------------------------------------------------------|
+| **Language**        | Python 3.10 or any version above                     |
+| **API Framework**   | FastAPI                                              |
+| **ML Model**        | Scikit-learn (Transformers-ready)                    |
+| **Testing**         | Pytest                                               |
+| **Containerization**| Docker                                               |
+| **CI/CD**           | GitHub Actions + Google Cloud Build & Run            |
+| **Cloud Platform**  | Google Cloud Platform (Artifact Registry, Cloud Run) |
 
 ---
 
